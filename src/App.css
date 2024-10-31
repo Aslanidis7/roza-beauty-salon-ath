@@ -1,38 +1,93 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Initial page load animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Set background image for the entire application */
+html, body, #root {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    background-image: url('../src/assets/images/Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Ensure content is visible on top of background */
 .App {
-  text-align: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Content wrapper with semi-transparent overlay */
+.content-wrapper {
+    position: relative;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Smooth page transitions */
+.page-transition-enter {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
+.page-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page-transition-exit {
+    opacity: 1;
+}
+
+.page-transition-exit-active {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Keep existing styles */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: transparent;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: rgb(255, 255, 255);
+    transition: all 0.5s ease-in-out;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Remove unnecessary animations */
+.App-logo {
+    display: none;
 }

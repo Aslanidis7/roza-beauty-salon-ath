@@ -1,0 +1,78 @@
+.testimonials-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.testimonials-container h2 {
+  font-size: 2.5rem;
+  color: #bd3364;
+  margin-bottom: 1rem;
+}
+
+.testimonials-container h3 {
+  font-size: 1.5rem;
+  color: #bd3364;
+  margin-top: 1rem;
+  text-decoration: underline;
+}
+
+.google-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.google-review {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.google-review:hover {
+  transform: translateY(-5px);
+}
+
+.google-review p {
+  margin: 0.5rem 0;
+}
+
+.google-review strong {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.google-review blockquote {
+  font-style: italic;
+  color: #333;
+  margin: 0.5rem 0;
+  border-left: 4px solid #bd3364;
+  padding-left: 0.5rem;
+}
+
+.google-attribution {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .testimonials-container {
+    padding: 1rem;
+  }
+
+  .testimonials-container h2 {
+    font-size: 2rem;
+  }
+
+  .google-review {
+    padding: 1rem;
+  }
+} 
